@@ -1,0 +1,98 @@
+{
+    "env": {
+        "owlPath": [
+            "${workspaceFolder}/app/inc",
+            "${workspaceFolder}/robotConfig/inc",
+            "/opt/eigen/Eigen",
+            // STM32CubeF1
+            "/opt/STM32CubeF1/Drivers/STM32F1xx_HAL_Driver/Inc/",
+            "/opt/STM32CubeF1/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+            "/opt/STM32CubeF1/Drivers/CMSIS/Include/",
+            "/opt/STM32CubeF1/Drivers/CMSIS/Core/Include/",
+            "/opt/STM32CubeF1/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+            // THE F1 board doesn't have enough space for an rtos :(
+            // STM32CubeF3
+            "/opt/STM32CubeF3/Drivers/STM32F3xx_HAL_Driver/Inc",
+            "/opt/STM32CubeF3/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy",
+            "/opt/STM32CubeF3/Drivers/CMSIS/Core/Include/",
+            "/opt/STM32CubeF3/Drivers/CMSIS/Include/",
+            "/opt/STM32CubeF3/Drivers/CMSIS/Device/ST/STM32F3xx/Include",
+            "/opt/STM32CubeF3/Middlewares/Third_Party/FreeRTOS/Source/include",
+            "/opt/STM32CubeF3/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS",
+            "/opt/STM32CubeF3/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+            "/opt/STM32CubeF3/Middlewares/Third_Party/FreeRTOS/Source/portable/Common",
+            "/opt/STM32CubeF3/Middlewares/Third_Party/FreeRTOS/Source/portable/Tasking",
+            "/opt/STM32CubeF3/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang",
+            // STM32CubeF4
+            "/opt/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Inc/",
+            "/opt/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+            "/opt/STM32CubeF4/Drivers/CMSIS/Core/Include/",
+            "/opt/STM32CubeF4/Drivers/CMSIS/Include/",
+            "/opt/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+            "/opt/STM32CubeF4/Middlewares/Third_Party/FreeRTOS/Source/include",
+            "/opt/STM32CubeF4/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS",
+            "/opt/STM32CubeF4/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+            // STM32CubeH7
+            "/opt/STM32CubeH7/Drivers/STM32H7xx_HAL_Driver/Inc/",
+            "/opt/STM32CubeH7/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+            "/opt/STM32CubeH7/Drivers/CMSIS/Core/Include/",
+            "/opt/STM32CubeH7/Drivers/CMSIS/Include/",
+            "/opt/STM32CubeH7/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+            "/opt/STM32CubeH7/Middlewares/Third_Party/FreeRTOS/Source/include",
+            "/opt/STM32CubeH7/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS",
+            // TODO: CHECK WHICH IS THE CORRECT ONE 
+            "/opt/STM32CubeH7/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+            // USB Config
+            "${workspaceFolder}/Middlewares/ST/stm32_mw_usb_device/Class/CDC/Inc",
+            "${workspaceFolder}/Middlewares/ST/stm32_mw_usb_device/Core/Inc"
+        ],
+        "owlDefines": [
+            "USE_HAL_DRIVER",
+            //"STM32F407xx"
+            //"STM32F100xB"
+            "STM32F303xE"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${owlPath}",
+                "${workspaceRoot}"
+            ],
+            "defines": [
+                "${owlDefines}"
+            ],
+            "macFrameworkPath": [
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/Applications/ARM/bin/arm-none-eabi-gcc",
+            "intelliSenseMode": "gcc-arm",
+            "cStandard": "c99",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${owlPath}",
+                "${workspaceRoot}",
+                "/opt/gcc-arm-none-eabi/arm-none-eabi/include",
+                "/opt/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include",
+                "/opt/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/13.2.1/include-fixed",
+                "/opt/gcc-arm-none-eabi/arm-none-eabi/include/c++/13.2.1",
+                "/opt/gcc-arm-none-eabi/arm-none-eabi/include/machine",
+                "/opt/gcc-arm-none-eabi/arm-none-eabi/include/newlib-nano",
+                "/opt/gcc-arm-none-eabi/arm-none-eabi/include/sys"
+            ],
+            "defines": [
+                "${owlDefines}"
+            ],
+            "compilerPath": "/usr/local/bin/arm-none-eabi-g++",
+            "intelliSenseMode": "gcc-arm",
+            "cStandard": "c99",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4,
+    "enableConfigurationSquiggles": true
+}

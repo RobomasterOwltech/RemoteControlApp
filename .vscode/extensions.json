@@ -1,0 +1,29 @@
+{
+    "recommendations": [
+        // ===== Containers 
+        "ms-vscode-remote.remote-containers",
+        // ===== Code documentation
+        "cschlosser.doxdocgen",
+        // ===== Intelli
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        // ===== Other tools
+        "ms-vscode.vscode-serial-monitor",
+        "tomoki1207.pdf",
+        "streetsidesoftware.code-spell-checker",
+        // ===== C++
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        // ===== Build
+        "ms-vscode.makefile-tools",
+        "ms-vscode.cmake-tools",
+        // ===== Code documentation
+        "cschlosser.doxdocgen",
+        // ===== Intelli
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        // ===== Other tools
+        "xaver.clang-format",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}

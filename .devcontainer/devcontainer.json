@@ -1,0 +1,78 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+    "name": "Ubuntu",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "-t": "owltech/compiler"
+        }
+    },
+    // Avoid git problems:
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}/robotConfig ${containerWorkspaceFolder}/Middlewares/owlware ${containerWorkspaceFolder}/Middlewares/ST/stm32_mw_usb_device",
+    //
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "uname -a",
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "C_Cpp.enhancedColorization": "enabled",
+                "cSpell.words": [
+                    "automations",
+                    "Robomaster",
+                    "Gobilda",
+                    "Owltech"
+                ],
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "ms-vscode.cpptools",
+                //"editor.defaultFormatter": "xaver.clang-format",
+                "clang-format.executable": "${workspaceRoot}/.clang-format",
+                "clang-format.formatOnSave": true,
+                "doxdocgen.c.firstLine": "/**",
+                "doxdocgen.c.commentPrefix": " * ",
+                "doxdocgen.c.lastLine": " **/",
+                "doxdocgen.cpp.tparamTemplate": "@tparam {param} ",
+                "doxdocgen.file.fileOrder": [
+                    "file",
+                    "author",
+                    "brief",
+                    "date"
+                ],
+                "doxdocgen.generic.dateFormat": "YYYY-MM-DD",
+                "doxdocgen.generic.useGitUserName": true,
+                "doxdocgen.generic.useGitUserEmail": true,
+                "cmake.configureOnOpen": false,
+                "files.associations": {
+                    "main.C": "cpp",
+                    "cmath": "cpp",
+                    "iostream": "cpp"
+                }
+            },
+            "extensions": [
+                // ===== C++
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                // ===== Build
+                "ms-vscode.makefile-tools",
+                "ms-vscode.cmake-tools",
+                // ===== Code documentation
+                "cschlosser.doxdocgen",
+                // ===== Intelli
+                "visualstudioexptteam.vscodeintellicode",
+                "visualstudioexptteam.intellicode-api-usage-examples",
+                // ===== Other tools
+                "xaver.clang-format",
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    }
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

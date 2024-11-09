@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        // ===== Upload to DevBoard =====
+        // sudo st-flash write Debug/STM32VLDISCOVERY.bin 0x08000000
+        {
+            "label": "Upload code!",
+            "type": "shell",
+            "command": "sudo",
+            "args": [
+                "st-flash",
+                "write",
+                "${input:path2Bin}",
+                "0x08000000"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "path2Bin",
+            "description": "Path to the binary file generated after build",
+            "default": "build/owltech.bin",
+            "type": "promptString"
+        }
+    ]
+}
